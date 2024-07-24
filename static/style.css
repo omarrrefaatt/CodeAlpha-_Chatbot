@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../static/images/background1.png);
+    background-size:cover;
+    background-position: center;         /*for styling header and putting backgroud image and useing linear gradient is for making image blury*/
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    color: #B3B4BD;
+    font-size: 4em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+p{
+    text-align: center;
+    color: #B3B4BD;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 50px;
+}
+
+#chat-container {
+    width: 80%;
+    max-width: 100%;
+    background: #2c2e3a;
+    box-shadow: 0 0 10px (0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+#chatbox {
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
+}
+
+.message {
+    margin: 10px 0; /* Margin top and bottom for spacing between messages */
+    overflow: hidden; /* Ensure content does not overflow */
+    clear: both; /* Clear floats */
+    max-width: 70%; /* Limit width to 70% of the container */
+}
+
+.user {
+    text-align: left;
+    color: #fff; /* Text color for user messages */
+    background-color: #0a21c0; /* Background color for user messages */
+    align-self: flex-end; /* Align to the right side */
+    max-width: 70%; /* Limit width to 70% of the container */
+    margin-left: auto; /* Push user messages to the right */
+    margin-right: 10px; /* Margin on the right side for spacing */
+    padding: 12px 15px; /* Padding inside the bubble */
+    border-radius: 15px; /* Rounded corners */
+    position: relative; /* Ensure relative positioning */
+}
+
+.user::after {
+    text-align: left;
+    content: ''; /* Required for pseudo-element */
+    position: absolute; /* Position relative to .user */
+    bottom: -15px; /* Adjust the position to overlap the next bubble */
+    right: 0; /* Align to the right side */
+    border-width: 15px 15px 0; /* Triangle shape */
+    border-style: solid;
+    border-color: #ccd0eb transparent transparent; /* Match background color */
+}
+
+.bot {
+    color: #333; /* Text color for bot messages */
+    background-color: #f1f1f1; /* Background color for bot messages */
+    align-self: flex-start; /* Align to the left side */
+    max-width: 70%; /* Limit width to 70% of the container */
+    margin-right: auto; /* Push bot messages to the left */
+    margin-left: 10px; /* Margin on the left side for spacing */
+    padding: 12px 15px; /* Padding inside the bubble */
+    border-radius: 15px; /* Rounded corners */
+    position: relative; /* Ensure relative positioning */
+}
+
+.bot::after {
+    content: ''; /* Required for pseudo-element */
+    position: absolute; /* Position relative to .bot */
+    bottom: -15px; /* Adjust the position to overlap the next bubble */
+    left: 0; /* Align to the left side */
+    border-width: 15px 0 0 15px; /* Triangle shape */
+    border-style: solid;
+    border-color: #f1f1f1 transparent transparent; /* Match background color */
+}
+#user-input {
+    display: flex;
+}
+#user-input input {
+    color: #B3B4BD;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color:#141619;
+    box-shadow: 0 4px 15px 0  #B3B4BD;
+}
+.bn {
+    padding: 10px 24px;
+    background: #0a21c0;
+    border: none;
+    color: #B3B4BD;
+    cursor: pointer;
+    border-radius: 5px;
+}     
+.bn:hover {
+    color: #B3B4BD;
+    background-color: #050A44;
+
+}

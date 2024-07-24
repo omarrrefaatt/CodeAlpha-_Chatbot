@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Chatbot</title>
+</head>
+<body>
+
+    <h1 class="title">Chatbot   <img  src="{{ url_for('static', filename='images/chat-bot1.png') }}"  width="80px"  alt="Send Mail"> </h1>
+    <p>Your Friendly Digital Companion.<br>
+        how can i help you?
+    </p>
+    <div id="chat-container">
+
+        <div id="chatbox"></div>
+        <div id="user-input">
+            <input type="text" id="userMsg" placeholder="Type a message..." />
+            <button onclick="sendMessage()" class="bn"><img  src="{{ url_for('static', filename='images/paper.png') }}"  width="20px"  alt="Send Mail"></button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userMsg = document.getElementById('userMsg').value;
+            if (!userMsg.trim()) {
+                return;
+            }
+            addMessage(userMsg, 'user');
+            document.getElementById('userMsg').value = '';
+
+            fetch(`/get?msg=${userMsg}`)
+                .then(response => response.json())
+                .then(data => {
+                    addMessage(data, 'bot');
+                });
+        }
+
+        function addMessage(text, sender) {
+            const chatbox = document.getElementById('chatbox');
+            const message = document.createElement('div');
+            message.innerText = text;
+
+            // Add appropriate class based on sender
+            if (sender === 'user') {
+                message.classList.add('message', 'user');
+            } else {
+                message.classList.add('message', 'bot');
+            }
+
+            chatbox.appendChild(message);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        document.getElementById('userMsg').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
