@@ -1,7 +1,3 @@
-Sure, here's a draft for the README file for your chatbot project. You can adjust it as needed before uploading it to GitHub:
-
----
-
 # Chatbot Project
 
 ## Overview
