@@ -30,6 +30,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
     ```bash
+
     git clone https://github.com/yourusername/chatbot-project.git
     cd chatbot-project
     ```
@@ -76,4 +77,4 @@ chatbot-project/
 
 ## Sample Chatbot Interaction
 
-<img width="1440" alt="chat bot" src="https://github.com/user-attachments/assets/1c418a4f-bc56-474c-b839-b402b619879c">
+<img width="1440" alt="Screenshot 2024-07-24 at 9 31 14 PM" src="https://github.com/user-attachments/assets/2da1132a-9619-4945-84fe-a63ed1dd7785">
