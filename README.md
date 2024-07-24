@@ -67,6 +67,8 @@ chatbot-project/
 ```
 
 - **templates/index.html**: The HTML file for the web interface.
+- **static/images**: The images needed.
+- **static/style.css**: The css file for the webpage styling.
 - **app.py**: The main Flask application file.
 - **pairs.py**: Contains the predefined question-answer pairs.
 - **README.md**: This README file.
